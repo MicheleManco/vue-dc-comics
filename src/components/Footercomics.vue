@@ -111,14 +111,13 @@ export default {
         height: 100px;
     }
     .banner {
-        background-image: url("../assets/img/jumbotron.jpg");
+        background-image: url("../assets/img/footer-bg.jpg");
         display: flex;
         justify-content: space-between;
         .separatore-footer {
             display: flex;
             width: 80%;
             margin: 0 auto;
-            align-items: center;
         }
     }
 }
