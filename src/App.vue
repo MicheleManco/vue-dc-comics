@@ -1,22 +1,25 @@
 <template>
   <div id="app">
     <Header/>
-    <Main/>
+    <Jumbo/>
+    <Fumetti/>
     <Footer/>
   </div>
 </template>
 
 <script>
+import Jumbo from './components/jumbo.vue'
 import Header from './components/Headercomics.vue'
 import Footer from './components/Footercomics.vue'
-import Main from './components/Maincomics.vue'
+import Fumetti from './components/fumetti.vue'
 
 export default {
   name: 'App',
   components: {
     Header,
     Footer,
-    Main
+    Fumetti,
+    Jumbo
   }
 }
 </script>

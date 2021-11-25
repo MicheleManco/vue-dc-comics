@@ -3,9 +3,10 @@
     
 <div id="banner-blue">
       <ul id="products">
+          <!-- non mi mette le img anche copiando quello fatto dal prof  -->
           <li v-for="(prodotto,i) in prodotti" :key="i">
-              <img src="require(`./assets/img/${prodotto.image}`)">
-              {{prodotto.text}}
+              <img :src="require(`../assets/img/${prodotto.image}`)">
+              <div>{{prodotto.text}}</div>
             </li>
       </ul>
     </div>
@@ -111,7 +112,7 @@ export default {
                 },
                 {
                 text: "DC POWER VISA",
-                image: "buy-dc-power-visa.png"   
+                image: "buy-dc-power-visa.svg"   
                 }
             ]
         }
@@ -124,6 +125,9 @@ export default {
 #banner-blue {
     background-color: rgb(0, 110, 255);
     color: white;
+    height: 150px;
+    display: flex;
+    align-items: center;
 
  #products {
         width: 80%;
@@ -133,6 +137,14 @@ export default {
         justify-content: space-between;
         align-items: center;
         height: 100px;
+        li {
+            display: flex;
+            align-items: center;
+            img {
+                margin-right: 15px;
+                width: 50px;
+            }
+        }
     }
 }
 .banner {
@@ -148,6 +160,7 @@ export default {
         justify-content: center;
         align-items: center;
         color: white;
+        height: 400px;
 
         .links-footer {
             display: flex;
@@ -159,6 +172,14 @@ export default {
                 color: gray;
             }
         }
+    }
+}
+#dc-logo {
+    height: 100%;
+    img {
+        height: 100%;
+        width: 600px;
+        object-fit: none;
     }
 }
 .gray {
