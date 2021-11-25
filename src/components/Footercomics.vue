@@ -1,13 +1,19 @@
 <template>
-  <div id="banner-blue">
+<div>
+    
+<div id="banner-blue">
       <ul id="products">
-          <li v-for="prodotto,i in prodotti" :key="i">
-              <img :src="prodotto.image" alt="">
+          <li v-for="(prodotto,i) in prodotti" :key="i">
+              <img src="require(`./assets/img/${prodotto.image}`)">
               {{prodotto.text}}
             </li>
       </ul>
+    </div>
+
+
       <div class="banner">
-          <div class="separatore-footer">
+          <div id="contenitore-footer">
+            <div class="links-footer">
             <div>   
               <h3>DC COMICS</h3>
               <ul>
@@ -54,14 +60,31 @@
                 </ul>
             </div>
           </div>
-          <div>
+
+          <div id="dc-logo">
               <img src="../assets/img/dc-logo-bg.png" alt="">
           </div>
+          </div>
+          
       </div>
       <div class="gray">
-
+          <div id="container-bottom">
+              <div id="btn">
+                  SIGN-UP NOW!
+              </div>
+              <div id="social-btns">
+                  <div id="follow-blu">FOLLOW US</div>
+                  <div><img src="../assets/img/footer-facebook.png" alt=""></div>
+                  <div><img src="../assets/img/footer-twitter.png" alt=""></div>
+                  <div><img src="../assets/img/footer-youtube.png" alt=""></div>
+                  <div><img src="../assets/img/footer-pinterest.png" alt=""></div>
+                  <div><img src="../assets/img/footer-periscope.png" alt=""></div>
+              </div>
+          </div>
       </div>
-  </div>
+</div>
+  
+  
 </template>
 
 <script>
@@ -72,23 +95,23 @@ export default {
             prodotti:[
                 {
                 text: "DIGITAL COMICS",
-                image: "../assets/img/buy-comics-digital-comics.png"   
+                image: "buy-comics-digital-comics.png"   
                 },
                 {
                 text: "DC MERCHANDISE",
-                image: "../assets/img/buy-comics-merchandise.png"   
+                image: "buy-comics-merchandise.png"   
                 },
                 {
                 text: "SUBSCRIPTION",
-                image: "../assets/img/buy-comics-subscriptions.png"   
+                image: "buy-comics-subscriptions.png"   
                 },
                 {
                 text: "COMIC SHOP LOCATOR",
-                image: "../assets/img/buy-comics-shop-locator.png"   
+                image: "buy-comics-shop-locator.png"   
                 },
                 {
                 text: "DC POWER VISA",
-                image: "../assets/img/buy-dc-power-visa.png"   
+                image: "buy-dc-power-visa.png"   
                 }
             ]
         }
@@ -101,7 +124,8 @@ export default {
 #banner-blue {
     background-color: rgb(0, 110, 255);
     color: white;
-    #products {
+
+ #products {
         width: 80%;
         margin: 0 auto;
         list-style: none;
@@ -110,15 +134,58 @@ export default {
         align-items: center;
         height: 100px;
     }
-    .banner {
-        background-image: url("../assets/img/footer-bg.jpg");
+}
+.banner {
+    background-image: url("../assets/img/footer-bg.jpg");
+    height: 400px;
+    display: flex;
+    background-repeat: no-repeat;
+    background-size: cover;
+    #contenitore-footer {
+        width: 80%;
+        margin: 0 auto;
         display: flex;
-        justify-content: space-between;
-        .separatore-footer {
+        justify-content: center;
+        align-items: center;
+        color: white;
+
+        .links-footer {
             display: flex;
             width: 80%;
-            margin: 0 auto;
+            ul{
+                list-style: none;
+                margin-right: 30px;
+                margin-bottom: 20px;
+                color: gray;
+            }
         }
+    }
+}
+.gray {
+    background-color: rgb(43, 43, 43);
+    height: 80px;
+}
+#container-bottom {
+    height: 100%;
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#btn {
+        border: 2px solid rgb(0, 110, 255);
+        padding: 10px;
+        color: white;
+    }
+#social-btns {
+    display: flex;
+    align-items: center;
+    div{
+        margin: 10px;
+    }
+    #follow-blu {
+        color: rgb(0, 110, 255);
     }
 }
 
